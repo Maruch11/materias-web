@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet"
+      href="{{ url_for('static', filename='css/style.css') }}">
+    <title>{% block title %}Materias Web{% endblock %}</title>
+</head>
+
+<body>
+
+<header>
+    <div class="container">
+        <h1>Materias Web</h1>
+
+        <nav>
+            <a href="/">Inicio</a>
+            <a href="/careers">Carreras</a>
+        </nav>
+    </div>
+</header>
+
+<main>
+    <div class="container">
+        {% block content %}
+        {% endblock %}
+    </div>
+</main>
+
+<footer>
+    <p>© 2026</p>
+</footer>
+
+</body>
+
+</html>

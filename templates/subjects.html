@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block title %}
+ISSP
+{% endblock %}
+
+{% block content %}
+
+<h2>Materias</h2>
+
+<p>
+Portal académico para consultar carreras, materias y recursos asociados.
+</p>
+
+<div class="cards-grid">
+{% for subject in subjects %}
+<div class="card">
+    <h3>{{ subject.subject_name }}</h3>
+    <p>Ver plan de estudios y materias.</p>
+</div>
+{% endfor %}
+</div>
+
+{% endblock %}

@@ -8,6 +8,10 @@
 - ✅ render_template() funcionando
 - ✅ Carpeta templates/ reconocida
 - ✅ Primera página HTML renderizada
+- ✅get_careers() funciona
+    - ✅ get_subjects_by_career() funciona.
+    - ✅ Filtra correctamente.
+    - ✅ Devuelve 32 materias para la carrera de prueba.
 
 # Estructura de proyecto
 ```
@@ -60,7 +64,8 @@ Inicio
 └── Acerca de
 ```
 
-# Maquetación de cada pantalla
+# Maquetación 
+## Pantalla
 ```
 +----------------------------------+
 | Materias Web                     |
@@ -73,6 +78,44 @@ Inicio
 +----------------------------------+
 ```
 
+## Tarjeta career cliqueable
+```
+┌────────────────────┐
+│ Policía            │
+│ Ver materias       │
+└────────────────────┘
+```
+
+## Tarjeta subject
+```
+Materia
+├── Nombre
+├── Term
+└── Official URL
+```
+```
+┌─────────────────────────────┐
+│ Derecho                     │
+│ 2° Cuatrimestre             │
+│ 🔗 Programa oficial        | 
+└─────────────────────────────┘
+```
+
+# Estrategia de diseño
+```
+base.html
+↓
+layout común
+
+.card
+↓
+componente visual común
+
+templates
+↓
+contenido específico
+```
+
 # Funcionalidad careers_service
 ```
 careers_service.py
@@ -82,4 +125,24 @@ leer careers.csv
 devolver lista de carreras
 ↓
 mostrar carreras en index.html
+```
+
+# Funcionalidad de subject_service
+```
+leer subjects.csv
+↓
+filtrar por career_id
+↓
+devolver materias de esa carrera
+```
+
+# flujo completo de punta a punta
+```
+http://127.0.0.1:5000
+↓
+clic en una carrera
+↓
+http://127.0.0.1:5000/careers/1
+↓
+lista de materias
 ```

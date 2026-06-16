@@ -13,10 +13,12 @@ Portal académico para consultar carreras, materias y recursos asociados.
 </p>
 
 {% for career in careers %}
-<div class="card">
-    <h3>{{ career.career_name }}</h3>
-    <p>Ver plan de estudios, materias y manuales.</p>
-</div>
+<a class="card-link" href="/careers/{{ career.career_id }}">
+    <div class="card">
+        <h3>{{ career.career_name }}</h3>
+        <p>Ver plan de estudios y materias.</p>
+    </div>
+</a>
 {% endfor %}
 
 {% endblock %}
